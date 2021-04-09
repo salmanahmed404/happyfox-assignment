@@ -28,4 +28,7 @@ A set of python scripts that integrate with GMail API and perform some rule base
         ```
 5. Running
     * ``` python main.py --help ``` to get a list of optional arguments
-    * ``` python main.py ``` to run the script
+    * ``` python main.py ``` to run the program
+        **Note** The first time the program is run, complete the oauth flow according 
+        to the prompts. For subsequent runs, the token is fetched from the file *token.json*
+        generated during the first run.
