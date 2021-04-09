@@ -1,0 +1,9 @@
+#Python
+__pycache__
+
+#Visual Studio Code
+.vscode
+
+#Secrets
+client_credentials.json
+token.json

@@ -1,0 +1,30 @@
+{
+    "globalPredicate": "all",
+    "rules": [
+        {
+            "field": "subject",
+            "predicate": "contains",
+            "value": "New" 
+        },
+        {
+            "field": "from",
+            "predicate": "contains",
+            "value": "<jobs@webkul.com>"
+        },
+        {
+            "field": "date",
+            "predicate": "less than days",
+            "value": 2
+        }
+    ],
+    "actions": [
+        {
+            "action": "move",
+            "value": "spam"
+        },
+        {
+            "action": "mark",
+            "value": "unread"
+        }
+    ]
+}
