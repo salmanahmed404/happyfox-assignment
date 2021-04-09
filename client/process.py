@@ -8,7 +8,7 @@ from sqlalchemy.orm import Query
 
 #Local imports
 from db.models import Message, Session
-from service.filters import (
+from client.filters import (
     date_field_filter, from_field_filter, 
     subject_field_filter
 )

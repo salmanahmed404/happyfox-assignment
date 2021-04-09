@@ -8,8 +8,8 @@ from config import (
     SCOPES, TOKENFILE
 )
 from db.models import Base, engine, recreate_db
-from service.fetch import fetch_emails
-from service.process import process_emails
+from client.fetch import fetch_emails
+from client.process import process_emails
 
 def main():
 
