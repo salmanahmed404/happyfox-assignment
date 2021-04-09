@@ -9,7 +9,7 @@
         {
             "field": "from",
             "predicate": "contains",
-            "value": "<jobs@webkul.com>"
+            "value": "<linkedin.com>"
         },
         {
             "field": "date",
