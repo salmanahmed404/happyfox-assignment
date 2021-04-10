@@ -55,4 +55,4 @@ def fetch_emails(creds, max_results, fetch_label):
                 count += 1
         s.commit()
         s.close()
-        print(f'{count} new {fetch_label} messages were added!')
+        print(f'{count} new {fetch_label} messages were added to the db!')

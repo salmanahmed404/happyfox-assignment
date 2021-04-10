@@ -12,6 +12,11 @@ def from_field_filter(s, rule):
     """
     Filters messages based on predicate
     specified on 'from' field
+    -----------------------------------
+
+    arguments:
+        - s: sqlalchemy session object
+        - rule: rule dictionary for this field
     """
     if rule['predicate'].upper() == 'EQUAL':
         q = s.query(Message).filter(
@@ -35,6 +40,11 @@ def subject_field_filter(s, rule):
     """
     Filters messages based on predicate
     specified on 'subject' field
+    ------------------------------------
+
+    arguments:
+        - s: sqlalchemy session object
+        - rule: rule dictionary for this field    
     """
     if rule['predicate'].upper() == 'EQUAL':
         q = s.query(Message).filter(
@@ -55,6 +65,15 @@ def subject_field_filter(s, rule):
     return q
 
 def date_field_filter(s, rule):
+    """
+    Filter messages based on predicate 
+    specified on 'date' field
+    -----------------------------------
+
+    arguments:
+        - s: sqlalchemy session object
+        - rule: rule dictionary for this field    
+    """
     if rule['predicate'].upper() == 'LESS THAN DAYS':
         end_date = date.today()
         start_date = end_date - relativedelta(days=rule['value'])
