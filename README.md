@@ -4,10 +4,21 @@
 
 A set of python scripts that integrate with GMail API and perform some rule based operation on emails
 
-* Python: Python 3.6
-* Database Used: Postgres
+## Overview
 
-## Libraries Used
+The program authenticates a user by performing the installed application oauth flow. A list of emails is then
+fetched from the authenticated user's GMail mailbox and stored in the local relational database (Postgres).
+The emails are then fetched from the database and processed against a set of rules specified as JSON file and 
+subsequent actions are performed on them accordingly. Default behaviour regarding the number of emails fetched,
+location of the rules file and fetch labels is specified in the *config.py* file which can be overriden by 
+providing commmand line arguments.
+
+## Specifications
+
+**Python:** Python 3.6
+**Database:** Postgres
+
+**Libraries Used** 
 
 1. SQLAlchemy: for database related operations
 2. google-python-api-client: for integrating with GMail API
