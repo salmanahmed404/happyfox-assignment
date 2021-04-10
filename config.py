@@ -6,7 +6,7 @@ TOKENFILE = 'token.json'
 
 #General configurations
 MAX_RESULTS = 5
-FETCH_LABEL = 'INBOX'
+FETCH_LABEL = ['INBOX', 'UNREAD']
 DIR_NAME = path.dirname(path.realpath(__file__))
 RULES_FILE = path.join(DIR_NAME, 'rules/rule1.json')
 

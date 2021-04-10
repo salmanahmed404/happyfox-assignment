@@ -24,7 +24,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--fetch-label',
-        help='Fetch email fiter, defaults to config.FETCH_LABEL'
+        help='Fetch email fiter(s), defaults to config.FETCH_LABEL',
+        nargs='+', type=str
     )
     parser.add_argument(
         '--rules-file',
@@ -32,15 +33,18 @@ def main():
     )
     parser.add_argument(
         '--max-results',
-        help='Number of number of emails to fetch, defaults to config.MAX_RESULTS'
+        help='Number of number of emails to fetch, defaults to config.MAX_RESULTS',
+        type=int
     )
     args = parser.parse_args()
     if args.fetch_label:
         fetch_label = args.fetch_label
     if args.max_results:
-        max_results = int(args.max_results)
+        max_results = args.max_results
     if args.rules_file:
         rules_file = args.rules_file
+    
+    fetch_label = [label.upper() for label in fetch_label]
     
     fetch_emails(creds, max_results, fetch_label)
     process_emails(creds, rules_file)

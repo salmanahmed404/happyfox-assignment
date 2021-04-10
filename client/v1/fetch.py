@@ -15,10 +15,15 @@ def fetch_emails(creds, max_results, fetch_label):
         - creds: oauth token object
         - fetch_label: label for filtered fetch 
     """
-    service = build('gmail', 'v1', credentials=creds)   
+    service = build('gmail', 'v1', credentials=creds)
+    include_spam_trash = False
+    if ('SPAM' in fetch_label or 'TRASH' in fetch_label):
+        include_spam_trash = True
+
     result = service.users().messages().list(
         userId='me', labelIds=fetch_label, 
-        maxResults=max_results
+        maxResults=max_results,
+        includeSpamTrash=include_spam_trash
     ).execute()
 
     message_ids = result.get('messages', [])
