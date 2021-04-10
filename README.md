@@ -16,6 +16,7 @@ providing commmand line arguments.
 ## Specifications
 
 **Python:** Python 3.6
+
 **Database:** Postgres
 
 **Libraries Used** 
