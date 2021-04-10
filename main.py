@@ -7,7 +7,7 @@ from config import (
     FETCH_LABEL, MAX_RESULTS, RULES_FILE, 
     SCOPES, TOKENFILE
 )
-from db.models import Base, engine, recreate_db
+from db.models import Base, engine
 from client.v1.fetch import fetch_emails
 from client.v1.process import process_emails
 
