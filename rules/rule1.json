@@ -1,10 +1,10 @@
 {
-    "globalPredicate": "all",
+    "globalPredicate": "any",
     "rules": [
         {
             "field": "subject",
             "predicate": "contains",
-            "value": "New" 
+            "value": "job" 
         },
         {
             "field": "from",

@@ -15,7 +15,6 @@ def main():
 
     if not engine.dialect.has_table(engine, 'message'):
         Base.metadata.create_all(engine)
-    recreate_db()
     creds = authenticate(TOKENFILE, SCOPES)
     fetch_label = FETCH_LABEL
     max_results = MAX_RESULTS

@@ -23,7 +23,3 @@ class Message(Base):
     subject = Column(String)
     date = Column(Date)
     labels = Column(ARRAY(String))
-
-def recreate_db():
-    Base.metadata.drop_all(engine)
-    Base.metadata.create_all(engine)
